@@ -33,6 +33,11 @@ const shemaClient=new mongoose.Schema({
         required:true,
         
     },
+    verss:{
+        type:Number,
+        required:true,
+        
+    },
     dattesAnciennes:{
         type:Number,
         required:true,

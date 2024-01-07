@@ -12,6 +12,10 @@ const shemaDepense=new mongoose.Schema({
     Montant:{
         type:String,
         required:true,
+    },
+    type:{
+        type:String,
+        required:true,
     }
   
     
