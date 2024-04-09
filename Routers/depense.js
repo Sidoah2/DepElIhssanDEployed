@@ -7,7 +7,10 @@ router.post("/",async(req,res)=>{
       const NewDepense=Depense({
         User:req.body.User,
         Category:req.body.Category,
-        Montant:req.body.Montant
+        Montant:req.body.Montant,     
+        type:req.body.type
+
+        
 
       })
       const result=await NewDepense.save()
@@ -17,6 +20,12 @@ router.post("/",async(req,res)=>{
 router.get("/:User",async(req,res)=>{
    
   const depenses=await Depense.find({User:req.params.User})
+  return res.status(200).json(depenses)
+})
+
+router.get("/",async(req,res)=>{
+   
+  const depenses=await Depense.find()
   return res.status(200).json(depenses)
 })
 

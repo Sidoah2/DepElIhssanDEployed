@@ -1,51 +1,54 @@
 const mongoose=require("mongoose")
 
-const shemaClient=new mongoose.Schema({
+const shemaInventaire=new mongoose.Schema({
+    image:{
+        type:String,
+        required:true,
+    },
 
+    UserId:{
+        type:String,
+        required:true
+    },
+    Category:{
+        type:String,
+        required:true,
+    },
+    isupdated:{
+        type:Boolean,
+        default:false
+    },
     name:{
         type:String,
         required:true,
     },
-    IdUser:{
+  
+    PrixAchat:{
         type:String,
         required:true,
     },
-    phone:{
-        type:Number,
-        required:true,
-    },
-    adresseMap:{
+    prixuni:{
         type:String,
         required:true,
     },
-    adresseMagasin:{
+    ZoneStockage:{
         type:String,
         required:true,
-        
-    },
-    region:{
-        type:String,
-        required:true,
-        
-    },
-    remarques:{
-        type:String,
-        required:true,
-        
-    },
-    verss:{
-        type:Number,
-        required:true,
-        
-    },
-    dattesAnciennes:{
-        type:Number,
-        required:true,
-        
     },
     
+    Fournisseur:{
+        type:String,
+        required:true,
+    },
+   
+    cntt:{
+        type:Number,
+        default:0,
+        
+    },
+  
 },{timestamps:true})
 
-const Client=mongoose.model("Client",shemaClient);
+const Inventaire=mongoose.model("Inventaire",shemaInventaire);
 
-module.exports=Client
+module.exports=Inventaire

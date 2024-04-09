@@ -1,15 +1,12 @@
 const mongoose=require("mongoose")
 
-const shemaClient=new mongoose.Schema({
+const shemaFournisseur=new mongoose.Schema({
 
     name:{
         type:String,
         required:true,
     },
-    IdUser:{
-        type:String,
-        required:true,
-    },
+   
     phone:{
         type:Number,
         required:true,
@@ -18,7 +15,7 @@ const shemaClient=new mongoose.Schema({
         type:String,
         required:true,
     },
-    adresseMagasin:{
+    adresseFournisseur:{
         type:String,
         required:true,
         
@@ -33,12 +30,12 @@ const shemaClient=new mongoose.Schema({
         required:true,
         
     },
-    verss:{
+    dattesAnciennes:{
         type:Number,
         required:true,
         
     },
-    dattesAnciennes:{
+    verss:{
         type:Number,
         required:true,
         
@@ -46,6 +43,6 @@ const shemaClient=new mongoose.Schema({
     
 },{timestamps:true})
 
-const Client=mongoose.model("Client",shemaClient);
+const Fournisseur=mongoose.model("Fournisseur",shemaFournisseur);
 
-module.exports=Client
+module.exports=Fournisseur

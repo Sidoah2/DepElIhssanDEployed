@@ -1,26 +1,27 @@
 const mongoose=require("mongoose")
 
-const shemaDepense=new mongoose.Schema({
+const shemaArticle=new mongoose.Schema({
     User:{
         required:true,
         type:String,
     },
-    Category:{
-        required:true,
+ 
+    observation:{
         type:String,
+default:""    },
+    image:{
+        type:String,
+        required:true,
     },
-    Montant:{
+    nameproduit:{
         type:String,
         required:true,
+        default:""
     },
-    type:{
-        type:String,
-        required:true,
-    }
   
     
 },{timestamps:true})
 
-const Depense=mongoose.model("Depense",shemaDepense);
+const Article=mongoose.model("Article",shemaArticle);
 
-module.exports=Depense
+module.exports=Article

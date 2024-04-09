@@ -15,10 +15,7 @@ const shemaBon=new mongoose.Schema({
         type:String,
         required:true,
     },
-    Versemment:{
-        type:Number,
-        required:true,
-    },
+   
     Designation:{
         type:[String],
         required:true,
