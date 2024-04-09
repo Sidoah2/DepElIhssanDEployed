@@ -71,7 +71,4 @@ myapp.use("/Api/v1/Congee/",CongeePath)
 
 
 
-
-myapp.listen(3030,()=>{
-    console.log("Serveur run on Port 3030...")
-})
+module.exports=myapp;
