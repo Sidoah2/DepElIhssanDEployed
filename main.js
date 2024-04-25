@@ -26,7 +26,7 @@ myapp.use(express.json({limit:"500mb"}))
 // myapp.use(bodyparser.urlencoded({extended:true,limit:"10000kb",parameterLimit:100000}))
 mongodb.connect("mongodb+srv://Sido:rfHEJkk1vtcrJFM3@cluster0.ws397jp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
     console.log("Database Connected.....  ")
-}).catch((err)=>{ console.log("failed Connect ")})
+}).catch((err)=>{ console.log("failed Connect "+err)})
 
 
 
