@@ -15,14 +15,6 @@ const FournisseurPath=require("./Routers/fournisseur")
 const CongeePath=require("./Routers/congee")
 
 
-myapp.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Max-Age", "1800");
-    res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token,Origin, X-Requested-With, Content, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-    next();
-  });
 
 
 
@@ -71,4 +63,7 @@ myapp.use("/Api/v1/Congee/",CongeePath)
 
 
 
-module.exports=myapp;
+const Port=process.env.Port || 3030
+myapp.listen(Port,()=>{
+    console.log("Serveur run on Port 3030...")
+})
