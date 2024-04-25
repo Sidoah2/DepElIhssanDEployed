@@ -27,10 +27,6 @@ myapp.use(express.json({limit:"500mb"}))
 mongodb.connect("mongodb+srv://Sido:rfHEJkk1vtcrJFM3@cluster0.ws397jp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
     console.log("Database Connected.....  ")
 }).catch((err)=>{ console.log("failed Connect "+err)})
-
-
-
-
 myapp.use("/Api/v1/Produits/",ProduitPath)
 myapp.use("/Api/v1/Bon/",BonPath)
 myapp.use("/Api/v1/Depenses/",DepensePath)
