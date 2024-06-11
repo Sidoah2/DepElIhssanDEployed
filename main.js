@@ -3,6 +3,7 @@ const express=require("express")
 const myapp=express()
 const mongodb=require("mongoose")
 // const bodyparser=require("body-parser")
+// const bodyparser=require("body-parser")
 const ProduitPath=require("./Routers/produit")
 const ClientPath=require("./Routers/client")
 const BonPath=require("./Routers/bon")
@@ -28,16 +29,13 @@ myapp.use(express.json({limit:"500mb"}))
 // myapp.use(bodyparser.urlencoded({extended:true,limit:"10000kb",parameterLimit:100000}))
 mongodb.connect("mongodb://127.0.0.1:27017/ElihssanDB").then(()=>{
     console.log("Database Connected.....  ")
-}).catch((err)=>{ console.log("failed Connect ")})
-
-
-
-
-
-
+}).catch((err)=>{ console.log("failed Connect "+err)})
 myapp.use("/Api/v1/Produits/",ProduitPath)
 myapp.use("/Api/v1/Bon/",BonPath)
 myapp.use("/Api/v1/Depenses/",DepensePath)
+myapp.use("/Api/v1/Articles/",ArticlePath)
+myapp.use("/Api/v1/Inventaire/",InventairePath)
+myapp.use("/Api/v1/User/",UserPath)
 myapp.use("/Api/v1/Articles/",ArticlePath)
 myapp.use("/Api/v1/Inventaire/",InventairePath)
 myapp.use("/Api/v1/User/",UserPath)
@@ -68,6 +66,7 @@ myapp.use("/Api/v1/Code/",CodePath)
 
 
 
-myapp.listen(3030,()=>{
+const Port=process.env.Port || 3030
+myapp.listen(Port,()=>{
     console.log("Serveur run on Port 3030...")
 })
