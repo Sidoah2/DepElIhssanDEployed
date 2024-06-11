@@ -27,7 +27,7 @@ const CodePath=require("./Routers/code")
 
 myapp.use(express.json({limit:"500mb"}))
 // myapp.use(bodyparser.urlencoded({extended:true,limit:"10000kb",parameterLimit:100000}))
-mongodb.connect("mongodb://127.0.0.1:27017/ElihssanDB").then(()=>{
+mongodb.connect("mongodb+srv://user2000:ahmedsido2022@cluster0.ws397jp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
     console.log("Database Connected.....  ")
 }).catch((err)=>{ console.log("failed Connect "+err)})
 myapp.use("/Api/v1/Produits/",ProduitPath)
