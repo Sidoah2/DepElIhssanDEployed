@@ -13,6 +13,8 @@ const UserPath=require("./Routers/user")
 const VersementPath=require("./Routers/versement")
 const FournisseurPath=require("./Routers/fournisseur")
 const CongeePath=require("./Routers/congee")
+const CodePath=require("./Routers/code")
+
 
 
 
@@ -43,6 +45,8 @@ myapp.use("/Api/v1/ClientS/",ClientPath)
 myapp.use("/Api/v1/Versements/",VersementPath)
 myapp.use("/Api/v1/Fournisseur/",FournisseurPath)
 myapp.use("/Api/v1/Congee/",CongeePath)
+myapp.use("/Api/v1/Code/",CodePath)
+
 
 
 
