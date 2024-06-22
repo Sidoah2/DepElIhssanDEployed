@@ -16,6 +16,8 @@ const FournisseurPath=require("./Routers/fournisseur")
 const CongeePath=require("./Routers/congee")
 const CodePath=require("./Routers/code")
 
+const cors=require("cors")
+
 
 
 
@@ -30,6 +32,7 @@ myapp.use(express.json({limit:"500mb"}))
 mongodb.connect("mongodb+srv://user2000:ahmedsido2022@cluster0.ws397jp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
     console.log("Database Connected.....  ")
 }).catch((err)=>{ console.log("failed Connect "+err)})
+myapp.use(cors())
 myapp.use("/Api/v1/Produits/",ProduitPath)
 myapp.use("/Api/v1/Bon/",BonPath)
 myapp.use("/Api/v1/Depenses/",DepensePath)
